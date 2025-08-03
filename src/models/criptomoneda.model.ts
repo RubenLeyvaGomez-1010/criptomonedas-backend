@@ -22,4 +22,10 @@ export class CriptomonedaModel extends Model {
     })
     simbolo: string;
 
+    @Column({
+        type: DataType.INTEGER,
+        allowNull: false,
+    })
+    coinMarketCapId: number;
+
 }
