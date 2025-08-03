@@ -24,7 +24,7 @@ const databaseProviders = [
         CriptomonedaModel,
         HistorialModel,
       ]);
-       await sequelize.sync();
+    // await sequelize.sync();
       return sequelize;
     },
   },
