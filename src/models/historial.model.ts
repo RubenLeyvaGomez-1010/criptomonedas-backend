@@ -1,4 +1,5 @@
-import { AllowNull, Column, DataType, Model, Table } from "sequelize-typescript";
+import { AllowNull, Column, DataType, ForeignKey, Model, Table } from "sequelize-typescript";
+import { CriptomonedaModel } from "./criptomoneda.model";
 
 @Table({ tableName: 'historial' })
 export class HistorialModel extends Model { 
@@ -10,11 +11,12 @@ export class HistorialModel extends Model {
     })
     id?: number;
 
+    @ForeignKey(() => CriptomonedaModel)
     @Column({
-        type: DataType.STRING,
+        type: DataType.INTEGER,
         allowNull: false,
     })
-    criptomonedaId: string;
+    criptomonedaId: number;
 
     @Column({
         type: DataType.FLOAT,
