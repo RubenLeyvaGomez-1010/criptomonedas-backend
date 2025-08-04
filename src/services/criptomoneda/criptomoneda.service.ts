@@ -30,7 +30,8 @@ export class CriptomonedaService {
         }));
         
         const save = await this.criptomonedaModel.bulkCreate(criptos, {
-            updateOnDuplicate: ['coinMarketCapId','nombre', 'simbolo'] 
+            updateOnDuplicate: ['coinMarketCapId','nombre', 'simbolo'],
+            
         });
 
         if(!save) throw new NotFoundException('Error al obtener las criptomonedas');

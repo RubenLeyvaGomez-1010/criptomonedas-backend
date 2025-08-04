@@ -17,4 +17,9 @@ export class EventsGateway {
   sendUpdate(data: any) {
     this.server.emit('cronUpdate', data);
   }
+
+  sendUpdateIndividual(criptoId: number, nuevoRegistro: any) {
+    this.server.emit(`historial-update-${criptoId}`, { criptoId, nuevoRegistro });
+  }
+
 }
