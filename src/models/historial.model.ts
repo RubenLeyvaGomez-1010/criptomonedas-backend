@@ -1,4 +1,4 @@
-import { AllowNull, Column, DataType, ForeignKey, Model, Table } from "sequelize-typescript";
+import { AllowNull, BelongsTo, Column, DataType, ForeignKey, Model, Table } from "sequelize-typescript";
 import { CriptomonedaModel } from "./criptomoneda.model";
 
 @Table({ tableName: 'historial' })
@@ -17,6 +17,8 @@ export class HistorialModel extends Model {
         allowNull: false,
     })
     criptomonedaId: number;
+    @BelongsTo(() => CriptomonedaModel, 'criptomonedaId')
+  criptomoneda: CriptomonedaModel;
 
     @Column({
         type: DataType.FLOAT,
